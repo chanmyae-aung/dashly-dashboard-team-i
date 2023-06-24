@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-color: #F8FAFB;
+}
+.nav-btn{
+    @apply w-[40px] h-[40px] text-xl text-[#9ea9b4] bg-white rounded-full shadow flex items-center justify-center
+}
+.nav-dropdown{
+    @apply  flex items-center px-3 py-2 gap-3 cursor-pointer select-none
+}
+.nav-dropdown:hover {
+    @apply bg-[#F6F7F8]
+}
