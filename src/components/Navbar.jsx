@@ -4,7 +4,7 @@ import { PiSun, PiMoon, PiBell } from "react-icons/pi";
 import {RiAppsLine} from 'react-icons/ri'
 import { TbSunMoon } from "react-icons/tb";
 import { stateContextCustom } from "../context/StateContext";
-import { language } from "../constants/nav";
+import { apps, language } from "../constants/nav";
 import uk from "../assets/icons8-great-britain-96.png";
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="relative w-[287.5px] flex items-center shadow rounded-md">
           <input
             type="text"
-            className="bg-[#F1F5F7] w-full outline-none rounded-md py-2 px-4"
+            className="bg-[#F1F5F7] text-sm w-full outline-none rounded-md py-2 px-4"
             placeholder="Search..."
           />
           <button className="bg-[#00C5D9] p-2 text-white rounded-lg absolute right-1">
@@ -79,6 +79,19 @@ const Navbar = () => {
             <button className="nav-btn">
               <RiAppsLine />
             </button>
+            <div className={`w-[300px] h-[250px] absolute overflow-scroll right-0 flex flex-wrap justify-around gap-5 mt-3 p-4 rounded-lg bg-white`}>
+              <h4 className="text-[#7E8790] text-xs font-semibold w-full">APPS AND SERVICES</h4>
+              {
+                apps.map(i => {
+                  return(
+                    <div key={i.id} className="flex flex-col items-center px-2">
+                      <img className="w-10" src={i.image}/>
+                    <p className="text-xs text-[#7E8790]">{i.title}</p>
+                    </div>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </main>
