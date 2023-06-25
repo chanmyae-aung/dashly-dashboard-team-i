@@ -1,16 +1,20 @@
-import React from 'react'
-import CRM from '../pages/dashboard/CRM'
-import Navbar from '../components/Navbar'
-import {Route, Routes} from 'react-router-dom'
+import React from "react";
+import CRM from "../pages/dashboard/CRM";
+import Navbar from "../components/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "../pages/dashboard/Dashboard";
+import Ecommerce from "../pages/Ecommerce";
 const Path = () => {
   return (
     <div>
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<CRM/>}/>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Dashboard />}>
+          <Route element={<Ecommerce />} />
+        </Route>
+        <Route path="/" element={<CRM />} />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default Path
+export default Path;
