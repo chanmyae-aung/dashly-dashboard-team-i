@@ -34,8 +34,8 @@ export const StateContextProvider = ({ children }) => {
     show === true && setShow(false);
     showLanguage === true && setShowLanguage(false);
     showApps === true && setShowApps(false);
-    showNoti === true && setShowNoti(false);
-    showSetting === true && setShowSetting(false);
+    // showNoti === true && setShowNoti(false);
+    // showSetting === true && setShowSetting(false);
   };
 
   const data = {
