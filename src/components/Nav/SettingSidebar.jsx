@@ -1,5 +1,5 @@
 import { Switch } from "@mantine/core";
-import React from "react";
+import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import {
   PiArrowCounterClockwise,
@@ -11,10 +11,40 @@ import { TbArrowBarLeft, TbSunMoon } from "react-icons/tb";
 import { stateContextCustom } from "../../context/StateContext";
 
 const SettingSidebar = () => {
-    const {toggleSetting} = stateContextCustom()
+  const { toggleSetting } = stateContextCustom();
+
+  const navigation = document.querySelectorAll(".navigation");
+  const colorScheme = document.querySelectorAll(".colorScheme");
+  const behaviour = document.querySelectorAll(".behaviour");
+
+  const handleNavigationActive = (e) => {
+    // const activeClass = e.target.classList;
+    // activeClass.contains("active") ? activeClass.remove("active") : activeClass.add("active")
+    navigation.forEach((i) => {
+      i.classList.remove("active");
+      e.target.classList.add("active");
+    });
+
+  };
+  const handleColorActive = (e) => {
+    colorScheme.forEach((i) => {
+        i.classList.remove("active");
+        e.target.classList.add("active");
+      }); 
+  }
+  const handleBehaviourActive = (e) => {
+    behaviour.forEach((i) => {
+        i.classList.remove("active");
+        e.target.classList.add("active");
+      }); 
+  }
+
   return (
-    <div className="px-8">
-      <CgClose onClick={toggleSetting} className="cursor-pointer text-xl ml-auto my-4" />
+    <div className="px-8 shadow-lg">
+      <CgClose
+        onClick={toggleSetting}
+        className="cursor-pointer text-xl ml-auto my-4"
+      />
       <img
         className="mx-auto"
         src="https://d33wubrfki0l68.cloudfront.net/0e108d71de2aec22aae71d891ecabd0ec28dc2bb/8484b/assets/images/illustrations/customization-illustration.svg"
@@ -32,14 +62,14 @@ const SettingSidebar = () => {
         <p className="text-xs text-[#7E8790]">
           Overall light or dark presentation.
         </p>
-        <div className="flex mt-4">
-          <button className="nav-dropdown justify-center w-[109px] text-white text-sm font-semibold  border rounded-l-full border-[#00BAC7] bg-[#00BAC7]">
+        <div className="flex mt-4" onClick={handleColorActive}>
+          <button  className=" colorScheme flex items-center px-3 py-2 gap-3 cursor-pointer select-none active justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
             <PiSun className="text-lg" /> Light
           </button>
-          <button className="nav-dropdown justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border-y border-[#00BAC7]">
+          <button  className=" colorScheme flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border-y border-[#00BAC7]">
             <PiMoon className="text-lg" /> Dark
           </button>
-          <button className="nav-dropdown justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border rounded-r-full border-[#00BAC7]">
+          <button  className=" colorScheme flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border rounded-r-full border-[#00BAC7]">
             <TbSunMoon className="text-lg" /> Auto
           </button>
         </div>
@@ -49,11 +79,15 @@ const SettingSidebar = () => {
         <p className="text-xs text-[#7E8790]">
           Usually dictated by the color scheme, but can be overriden.
         </p>
-        <div className="flex mt-4 ">
-          <button className="nav-dropdown justify-center w-full text-white text-sm font-semibold  border rounded-l-full border-[#00BAC7] bg-[#00BAC7]">
+        <div className="flex mt-4 " onClick={handleNavigationActive}>
+          <button
+            className={`navigation active flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]`}
+          >
             Default
           </button>
-          <button className="nav-dropdown justify-center w-full text-[#00BAC7] text-sm font-semibold border rounded-r-full  border-[#00BAC7]">
+          <button
+            className={`navigation flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-[#00BAC7] text-sm font-semibold  border rounded-r-full border-[#00BAC7]`}
+          >
             Inverted
           </button>
         </div>
@@ -63,14 +97,14 @@ const SettingSidebar = () => {
         <p className="text-xs text-[#7E8790]">
           Standard navigation sizing or minified icons with dropdowns.
         </p>
-        <div className="flex mt-4">
-          <button className="nav-dropdown justify-center w-[109px] text-white text-sm font-semibold  border rounded-l-full border-[#00BAC7] bg-[#00BAC7]">
+        <div onClick={handleBehaviourActive} className="flex mt-4">
+          <button className="behaviour active flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
             Fixed
           </button>
-          <button className="nav-dropdown justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border-y border-[#00BAC7]">
+          <button className="behaviour flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border-y border-[#00BAC7]">
             Condensed
           </button>
-          <button className="nav-dropdown justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border rounded-r-full border-[#00BAC7]">
+          <button className="behaviour flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border rounded-r-full border-[#00BAC7]">
             Scrollable
           </button>
         </div>
@@ -100,10 +134,10 @@ const SettingSidebar = () => {
         <Switch />
       </div>
       <div className="flex gap-3 my-4 ">
-        <button className="nav-dropdown justify-center w-full text-sm font-semibold  border rounded-full">
+        <button className="flex footer-active items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-sm font-semibold  border rounded-full">
           <PiArrowCounterClockwise /> Reset
         </button>
-        <button className="nav-dropdown justify-center w-full text-sm font-semibold border rounded-full">
+        <button className="flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-sm font-semibold border rounded-full">
           Preview
         </button>
       </div>

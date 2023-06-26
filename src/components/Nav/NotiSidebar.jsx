@@ -20,7 +20,7 @@ const NotiSidebar = () => {
         return (
           <div
             key={i.id}
-            className="px-5 border-t items-center cursor-pointer"
+            className="px-5 border-t items-center cursor-pointer hover:bg-[#E5F8F9]"
           >
             <div className="flex items-center py-2 justify-between w-full">
               <div className="flex items-center gap-3">
