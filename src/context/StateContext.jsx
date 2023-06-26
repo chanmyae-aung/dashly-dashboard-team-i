@@ -9,6 +9,8 @@ export const StateContextProvider = ({ children }) => {
   const [image, setImage] = useState();
   const [showNoti, setShowNoti] = useState(false);
   const [showSetting, setShowSetting] = useState(false)
+  const [showProfile, setShowProfile] = useState(false)
+  const [showStatus, setShowStatus] = useState(false)
 
   const toggleShow = () => {
     setShow(!show);
@@ -29,17 +31,25 @@ export const StateContextProvider = ({ children }) => {
   const toggleSetting = () => {
     setShowSetting(!showSetting)
   }
+  const toggleProfile = () => {
+    setShowProfile(!showProfile)
+  }
+  const toggleStatus = () => {
+    setShowStatus(!showStatus)
+  }
 
   const hide = () => {
     show === true && setShow(false);
     showLanguage === true && setShowLanguage(false);
     showApps === true && setShowApps(false);
+    // showProfile === true && setShowProfile(false);
     // showNoti === true && setShowNoti(false);
     // showSetting === true && setShowSetting(false);
   };
 
   const data = {
     show,
+    setShow,
     toggleShow,
     showLanguage,
     toggleLanguage,
@@ -51,6 +61,10 @@ export const StateContextProvider = ({ children }) => {
     toggleNoti,
     showSetting,
     toggleSetting,
+    showProfile,
+    toggleProfile,
+    showStatus,
+    toggleStatus,
     hide,
   };
   return <stateContext.Provider value={data}>{children}</stateContext.Provider>;
