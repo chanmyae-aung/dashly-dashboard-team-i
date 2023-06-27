@@ -45,7 +45,7 @@ const Navbar = () => {
               <PiSun />
             </button>
             <div className={`${!show ? "hidden" : "block"} absolute right-0`}>
-              <Theme />
+              <Theme /> 
             </div>
           </div>
           {/* Select Languages */}
