@@ -4,7 +4,7 @@ import { apps } from "../../constants/nav";
 const ShowApps = () => {
   return (
     <div
-      className={` w-[300px] h-[250px]  overflow-y-scroll  flex flex-wrap justify-around gap-5 mt-3 p-4 rounded-lg bg-white`}
+      className={`shadow-lg w-[300px] h-[250px]  overflow-y-scroll  flex flex-wrap justify-around gap-5 mt-3 p-4 rounded-lg bg-white`}
     >
       <h4 className="text-[#7E8790] text-xs font-semibold w-full">
         APPS AND SERVICES

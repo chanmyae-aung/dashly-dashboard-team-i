@@ -1,7 +1,8 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
-import { PiSun, PiBell } from "react-icons/pi";
-import { RiAppsLine, RiSettings2Line } from "react-icons/ri";
+import { PiSunBold, PiBell } from "react-icons/pi";
+import { RiAppsLine } from "react-icons/ri";
+import { MdOutlineSettings } from "react-icons/md";
 import { stateContextCustom } from "../../context/StateContext";
 import uk from "../../assets/icons8-great-britain-96.png";
 import Theme from "./Theme";
@@ -9,25 +10,35 @@ import Languages from "./Languages";
 import ShowApps from "./ShowApps";
 import NotiSidebar from "./NotiSidebar";
 import SettingSidebar from "./SettingSidebar";
+import Profile from "./Profile";
 
 const Navbar = () => {
   const {
     show,
+    setShow,
     toggleShow,
     showLanguage,
     toggleLanguage,
     image,
     showApps,
     toggleApps,
-    showNoti, 
+    showNoti,
     toggleNoti,
     showSetting,
-    toggleSetting
+    toggleSetting,
+    showProfile,
+    toggleProfile,
   } = stateContextCustom();
+  
+  const closeSideBars = () => {
+    showNoti &&toggleNoti();
+    showSetting && toggleSetting()
+    showProfile && toggleProfile()
+  }
 
   return (
     <>
-      <main className="flex w-screen items-center justify-center md:justify-between md:p-10 p-5">
+      <main className="flex relative w-screen items-center justify-center md:justify-between md:p-10 p-5">
         <div className="hidden relative w-[287.5px] md:flex items-center shadow rounded-md">
           <input
             type="text"
@@ -42,10 +53,13 @@ const Navbar = () => {
           {/* Select Theme */}
           <div className="relative mx-5">
             <button onClick={toggleShow} className="nav-btn">
-              <PiSun />
+              <PiSunBold className=""/>
             </button>
-            <div className={`${!show ? "hidden" : "block"} absolute right-0`}>
-              <Theme /> 
+            <div
+              onClick={() => setShow(false)}
+              className={`${!show ? "hidden" : "block"} absolute right-0`}
+            >
+              <Theme />
             </div>
           </div>
           {/* Select Languages */}
@@ -61,6 +75,15 @@ const Navbar = () => {
               <Languages />
             </div>
           </div>
+          {/* closed sidebar  */}
+            <div
+              onClick={closeSideBars}
+              className={
+                showNoti || showSetting || showProfile
+                  ? "w-full h-screen ml-[110px] fixed top-0 right-0 bg-transparent"
+                  : null
+              }
+            ></div>
           <div className="flex gap-5 border-x px-5">
             {/* Notification */}
             <div className="relative">
@@ -71,9 +94,13 @@ const Navbar = () => {
                 </span>
               </button>
             </div>
-              <div className={`${!showNoti ? "hidden": "block" } transition-all ease-linear duration-500 w-[400px] absolute right-0 top-0  h-screen bg-white z-10 overflow-y-scroll `}>
-                <NotiSidebar/>
-              </div>
+            <div
+              className={`${
+                !showNoti ? "translate-x-[400px]" : "translate-x-0"
+              } shadow-lg transition-all ease-in duration-200 w-[400px] fixed right-0 top-0  h-screen bg-white z-10 overflow-y-scroll `}
+            >
+              <NotiSidebar />
+            </div>
             {/* Show Apps */}
             <div className="relative">
               <button onClick={toggleApps} className="nav-btn">
@@ -86,21 +113,39 @@ const Navbar = () => {
               </div>
             </div>
             {/* Settings */}
-            <div className="relative">
+            <div className="relative ">
               <button onClick={toggleSetting} className="nav-btn">
-                <RiSettings2Line />
+                <MdOutlineSettings className=" animate-spin"/>
               </button>
             </div>
-            <div className={`${!showSetting ? "hidden":"block"} w-[400px] absolute right-0 top-0  h-screen bg-white z-10 overflow-y-scroll `}>
-                <SettingSidebar/>
-              </div>
+            <div
+              className={`${
+                !showSetting ? "translate-x-[400px]" : "translate-x-0"
+              } w-[400px] fixed right-0 top-0 transition-all ease-in duration-200 h-screen bg-white z-10 overflow-y-scroll `}
+            >
+              <SettingSidebar />
+            </div>
           </div>
           {/* Profile */}
           <div className="relative cursor-pointer">
-          <div className="w-[40px] h-[40px] rounded-full overflow-hidden ml-5">
-              <img className="" src="https://d33wubrfki0l68.cloudfront.net/053f2dfd0df2f52c41e903a21d177b0b44abc9b1/1282c/assets/images/profiles/profile-06.jpeg" alt="" />
-          </div>
-              <span className="w-3 h-3 absolute right-0 bottom-0 border border-white rounded-full bg-green-500"></span>
+            <div
+              onClick={toggleProfile}
+              className="w-[40px] h-[40px] rounded-full overflow-hidden ml-5"
+            >
+              <img
+                className=""
+                src="https://d33wubrfki0l68.cloudfront.net/053f2dfd0df2f52c41e903a21d177b0b44abc9b1/1282c/assets/images/profiles/profile-06.jpeg"
+                alt=""
+              />
+            </div>
+            <span className="w-3 h-3 absolute right-0 bottom-0 border border-white rounded-full bg-green-500"></span>
+            <div
+              className={`${
+                !showProfile ? "hidden" : "block"
+              } absolute right-0`}
+            >
+              <Profile />
+            </div>
           </div>
         </div>
       </main>
