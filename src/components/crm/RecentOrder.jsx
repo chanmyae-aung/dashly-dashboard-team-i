@@ -9,9 +9,10 @@ const RecentOrder = () => {
         <h3 className="text-sm font-bold">RECENT ORDERS</h3>
         <BsThreeDotsVertical />
       </div>
-      <table className="w-full overflow-x-scroll table-auto">
-        <thead >
-          <tr className="text-xs h-9 text-[#B3C3D6] bg-[#F4F5F6]">
+      <div className="overflow-x-scroll">
+      <table className="table w-[855.5px]">
+        <thead>
+          <tr className="text-xs text-[#B3C3D6] bg-[#F4F5F6]">
             <th>No.</th>
             <th>Customer ID</th>
             <th>Product name</th>
@@ -21,11 +22,11 @@ const RecentOrder = () => {
             <th>Customer</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {orders.map((i) => {
             return (
-              <tr key={i.id} className="text-sm h-16 ">
-                <td >{i.id}</td>
+              <tr key={i.id} className="text-sm ">
+                <td>{i.id}</td>
                 <td>{i.customer_id}</td>
                 <td className="flex items-center gap-3">
                   <img className="w-10" src={i.image} alt="" />
@@ -33,15 +34,21 @@ const RecentOrder = () => {
                 </td>
                 <td>{i.date}</td>
                 <td>{i.price}</td>
-                <td
-                  className={`
-                    ${(i.status === "Paid" && "bg-green-100 font-semibold text-green-600") ||
-                    (i.status === "Pending" &&
-                      "bg-yellow-100 font-semibold text-yellow-600") ||
-                    (i.status === "Shipped" && "bg-blue-100 font-semibold text-blue-600")} text-[.7rem] rounded-full flex w-fit px-2
-                  `}
-                >
-                  {i.status}
+                <td>
+                  <p
+                    className={`
+                ${
+                  (i.status === "Paid" &&
+                    "bg-green-100 font-semibold text-green-600") ||
+                  (i.status === "Pending" &&
+                    "bg-yellow-100 font-semibold text-yellow-600") ||
+                  (i.status === "Shipped" &&
+                    "bg-blue-100 font-semibold text-blue-600")
+                } text-[.7rem] rounded-full px-2 w-fit
+              `}
+                  >
+                    {i.status}
+                  </p>
                 </td>
                 <td>{i.customer_name}</td>
               </tr>
@@ -49,6 +56,7 @@ const RecentOrder = () => {
           })}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

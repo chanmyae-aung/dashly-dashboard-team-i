@@ -50,3 +50,12 @@ export const orders = [
         customer_name:"Kiayada Beard",
     },
 ]
+
+export const pieData = [
+    { name: 'Opened', value: 49 },
+    { name: 'Clicked', value: 22 },
+    { name: 'Bounce', value: 13 },
+    { name: 'Spam', value: 5 },
+  ];
+  
+  export const COLORS = ['#1EB8E2', '#20E281', '#FFD933', '#EC1A52'];
