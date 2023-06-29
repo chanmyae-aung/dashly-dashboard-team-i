@@ -9,6 +9,10 @@
 body{
     background-color: #F8FAFB;
 }
+.nav .at{
+    border-left:2px solid #00BAC7;
+    color: #00BAC7;
+}
 .nav-btn{
     @apply w-[40px] h-[40px] text-xl text-[#9ea9b4] bg-white rounded-full shadow flex items-center justify-center
 }
