@@ -11,9 +11,10 @@ import Revenue from "../../components/crm/Revenue";
 
 const CRM = () => {
   return (
-    <div className="mx-10">
-      <h1 className="text-xl font-bold">CRM</h1>
-      <div className="flex justify-between mb-5">
+    <div className="w-ful">
+      <h1 className="text-xl font-bold pb-16 bg-[#F8FAFB] px-10 -mb-10">CRM</h1>
+<div className="px-10">
+<div className="flex justify-between mb-5">
         <div className="w-[657.5px]">
           <RecentOrder />
         </div>
@@ -38,6 +39,8 @@ const CRM = () => {
         <Revenue />
         <Volume/>
       </div>
+      <p className="my-10">© Dashly. 2023 Webinning.</p>
+</div>
     </div>
   );
 };

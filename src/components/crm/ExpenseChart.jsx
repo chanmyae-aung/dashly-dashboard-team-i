@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bar, Line } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -41,7 +41,7 @@ const data = {
       fill: false,
       label: null,
       backgroundColor: "rgba(0, 104, 179, 0.2)",
-      borderColor: "#42E694",
+      borderColor: "#EE3869",
       borderWidth: 3,
       pointStyle: false,
       barPercentage: 0.5,
@@ -50,8 +50,8 @@ const data = {
       minBarLength: 2,
     //   drawActiveElementsOnTop: true,
       data: [
-        400,1000,1000,2500,3000,1500,4000,5000,8000,6000,5500,6500
-      ],
+        9932,7384,6673,4500,3834,1222,2127,3384,2992,5383,1923,2537
+         ],
     },
   ],
   options: {
@@ -115,7 +115,7 @@ const data = {
   },
 };
 
-const SaleChart = () => {
+const ExpenseChart = () => {
   return (
     <div>
       <Line options={data.options} data={data} width={120}
@@ -125,4 +125,4 @@ const SaleChart = () => {
   )
 }
 
-export default SaleChart
+export default ExpenseChart

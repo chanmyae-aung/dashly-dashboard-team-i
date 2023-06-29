@@ -150,7 +150,7 @@ const data = {
 
 const Volume = () => {
   return (
-    <div className="h-40">
+    <div className="">
       <h2 className="text-[0.95rem] font-semibold">VOLUME</h2>
       <h2 className="text-3xl font-bold mt-3">$19,782</h2>
       <div className="mb-3">
@@ -162,7 +162,7 @@ const Volume = () => {
         <p className="text-xs text-gray-400">vs last year</p>
       </div>
       <div>
-        <Bar options={data.options} data={data} />
+        <Bar options={data.options} data={data} height={70}/>
       </div>
     </div>
   );
