@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <>
-      <main className="flex relative w-screen items-center justify-center md:justify-between md:p-10 p-5">
+      <main className="flex relative w-full items-center justify-center md:justify-between md:p-10 p-5 bg-[#F8FAFB]">
         <div className="hidden relative w-[287.5px] md:flex items-center shadow rounded-md">
           <input
             type="text"
