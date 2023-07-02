@@ -15,7 +15,7 @@ const Sidebar = () => {
   const [showAuth,setShowAuth] = useState(false)
 
   return (
-    <div className="w-[260px] h-screen overflow-y-scroll bg-[#0e2238] text-[#9ea9b4]">
+    <div className="w-[260px] h-screen overflow-y-scroll bg-[#0e2238] text-[#9ea9b4] sticky top-0 left-0">
       <div className="px-8 py-10">
         <img
           src="https://d33wubrfki0l68.cloudfront.net/55307694d1a6b107d2d87c838a1aaede85cd3d84/66f18/assets/images/logo-dark.svg"
