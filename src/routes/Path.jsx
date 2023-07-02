@@ -9,7 +9,7 @@ const Path = () => {
     <div>
       <Routes>
         <Route path="/" element={<Dashboard />}>
-          <Route element={<Ecommerce />} />
+          <Route index element={<Ecommerce />} />
         </Route>
         <Route path="/" element={<CRM />} />
       </Routes>
