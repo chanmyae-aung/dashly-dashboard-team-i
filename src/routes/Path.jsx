@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Ecommerce from "../pages/Ecommerce";
 import Account from "../pages/Account";
+import Default from "../components/Default/Default";
 
 const Path = () => {
   return (
@@ -14,6 +15,7 @@ const Path = () => {
           <Route index element={<Ecommerce />} />
           <Route path="/crm" element={<CRM />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/default" element={<Default/>}/>
         </Route>
       </Routes>
     </div>
