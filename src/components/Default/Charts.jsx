@@ -45,7 +45,7 @@ const Charts = () => {
           <BsCashCoin className="text-4xl text-[#00C5D9]" />
         </div>
       </div>
-      <div className="flex justify-between items-start p-5 w-[48%] bg-white rounded-xl shadow-lg">
+      <div className="flex justify-between items-center p-5 w-[48%] bg-white rounded-xl shadow-lg">
         <div className="flex flex-col gap-5">
           <div className="flex gap-1 items-end">
             <div className="">

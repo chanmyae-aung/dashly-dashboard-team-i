@@ -1,3 +1,97 @@
+import React from "react";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJs,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Tooltip,
+} from "chart.js";
+
+ChartJs.register(
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Tooltip
+);
+
+const AreaChart = () => {
+  const data = {
+    labels: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "April",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    datasets: [
+      {
+        label: "$",
+        data: [
+          400, 1000, 1000, 2500, 3000, 1500, 4000, 5000, 8000, 6000, 5500, 6500,
+        ],
+        backgroundColor: "#00C5D9",
+        pointStyle:'circle',
+        pointColor:'#00C5D9',
+        pointRadius:2,
+        borderColor: "#00C5D9",
+        pointBorderColor: "transparent",
+        tension: 0.4,
+      },
+    ],
+  };
+
+  const options = {
+    plugins: {
+      legend: false,
+      tooltip: {
+        displayColors: true,
+        usePointStyle:true,
+      },
+    },
+    scales: {
+      y: {
+        grid: {
+          display: false,
+        },
+        ticks: {
+          display: false,
+        },
+        border: {
+          display: false,
+        },
+      },
+      x: {
+        grid: {
+          display: false,
+        },
+        ticks: 0,
+        border: {
+          display: false,
+        },
+      },
+    },
+  };
+
+  return (
+    <div>
+      <Line height={80} width={200} data={data} options={options} style={{ marginLeft: "auto" }}></Line>
+    </div>
+  );
+};
+
+export default AreaChart;
+
+
 // import React from "react";
 // import {
 //   ResponsiveContainer,
@@ -10,81 +104,81 @@
 //   Legend
 // } from "recharts";
 
-import React, { PureComponent } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+// import React, { PureComponent } from "react";
+// import {
+//   AreaChart,
+//   Area,
+//   XAxis,
+//   YAxis,
+//   CartesianGrid,
+//   Tooltip,
+//   ResponsiveContainer,
+// } from "recharts";
 
-const data = [
-  {
-    name: "Jan",
-    $: 400,
-  },
-  {
-    name: "Feb",
-    $: 1000,
-  },
-  {
-    name: "Mar",
-    $: 1000,
-  },
-  {
-    name: "Apr",
-    $: 2500,
-  },
-  {
-    name: "May",
-    $: 3000,
-  },
-  {
-    name: "Jun",
-    $: 1500,
-  },
-  {
-    name: "Jul",
-    $: 4000,
-  },
-  {
-    name: "Aug",
-    $: 5000,
-  },
-  {
-    name: "Sep",
-    $: 8000,
-  },
-  {
-    name: "Oct",
-    $: 6000,
-  },
-  {
-    name: "Nov",
-    $: 5500,
-  },
-  {
-    name: "Dec",
-    $: 6500,
-  },
-];
+// const data = [
+//   {
+//     name: "Jan",
+//     $: 400,
+//   },
+//   {
+//     name: "Feb",
+//     $: 1000,
+//   },
+//   {
+//     name: "Mar",
+//     $: 1000,
+//   },
+//   {
+//     name: "Apr",
+//     $: 2500,
+//   },
+//   {
+//     name: "May",
+//     $: 3000,
+//   },
+//   {
+//     name: "Jun",
+//     $: 1500,
+//   },
+//   {
+//     name: "Jul",
+//     $: 4000,
+//   },
+//   {
+//     name: "Aug",
+//     $: 5000,
+//   },
+//   {
+//     name: "Sep",
+//     $: 8000,
+//   },
+//   {
+//     name: "Oct",
+//     $: 6000,
+//   },
+//   {
+//     name: "Nov",
+//     $: 5500,
+//   },
+//   {
+//     name: "Dec",
+//     $: 6500,
+//   },
+// ];
 
-export default class Example extends PureComponent {
-  static demoUrl = "https://codesandbox.io/s/simple-area-chart-4ujxw";
+// export default class Example extends PureComponent {
+//   static demoUrl = "https://codesandbox.io/s/simple-area-chart-4ujxw";
 
-  render() {
-    return (
-      <AreaChart width={250} height={70} data={data}>
-        <XAxis dataKey="name" hide="false" />
-        <Tooltip />
-        <Area type="monotone" dataKey="$" stroke="#4aced7" fill="#abe9ec"/>
-      </AreaChart>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <AreaChart width={250} height={70} data={data}>
+//         <XAxis dataKey="name" hide="false" />
+//         <Tooltip />
+//         <Area type="monotone" dataKey="$" stroke="#4aced7" fill="#abe9ec"/>
+//       </AreaChart>
+//     );
+//   }
+// }
 
 // const data = [
 //   {
@@ -196,95 +290,3 @@ export default class Example extends PureComponent {
 
 // export default AreaChart;
 
-// import React from "react";
-// import { Line } from "react-chartjs-2";
-// import {
-//   Chart as ChartJs,
-//   LineElement,
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   Tooltip,
-// } from "chart.js";
-
-// ChartJs.register(
-//   LineElement,
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   Tooltip
-// );
-
-// const AreaChart = () => {
-//   const data = {
-//     labels: [
-//       "Jan",
-//       "Feb",
-//       "Mar",
-//       "April",
-//       "May",
-//       "Jun",
-//       "Jul",
-//       "Aug",
-//       "Sep",
-//       "Oct",
-//       "Nov",
-//       "Dec",
-//     ],
-//     datasets: [
-//       {
-//         label: "$",
-//         data: [
-//           400, 1000, 1000, 2500, 3000, 1500, 4000, 5000, 8000, 6000, 5500, 6500,
-//         ],
-//         backgroundColor: "aqua",
-//         pointStyle:'circle',
-//         pointColor:'aqua',
-//         pointRadius:0,
-//         borderColor: "aqua",
-//         pointBorderColor: "transparent",
-//         tension: 0.4,
-//       },
-//     ],
-//   };
-
-//   const options = {
-//     plugins: {
-//       legend: false,
-//       tooltip: {
-//         displayColors: true,
-//         usePointStyle:true,
-//       },
-//     },
-//     scales: {
-//       y: {
-//         grid: {
-//           display: false,
-//         },
-//         ticks: {
-//           display: false,
-//         },
-//         border: {
-//           display: false,
-//         },
-//       },
-//       x: {
-//         grid: {
-//           display: false,
-//         },
-//         ticks: 0,
-//         border: {
-//           display: false,
-//         },
-//       },
-//     },
-//   };
-
-//   return (
-//     <div style={{ width: "300px", height: "80px" }}>
-//       <Line data={data} options={options} style={{ marginLeft: "auto" }}></Line>
-//     </div>
-//   );
-// };
-
-// export default AreaChart;

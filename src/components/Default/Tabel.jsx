@@ -11,7 +11,7 @@ const Tabel = () => {
       <table class="">
         <thead className="bg-[#f4f5f6]">
           <tr>
-            <th class="py-2 px-4 border-b w-[10%] text-gray-400 text-xs text-start">
+            <th class="py-2 px-4 border-b w-[5%] text-gray-400 text-xs text-start">
               #
             </th>
             <th class="py-2 px-4 border-b w-[40%] text-gray-400 text-xs text-start">
