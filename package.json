@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "chart.js": "^4.3.0",
+    "react": "^18.2.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@faker-js/faker": "^8.0.2",
@@ -17,19 +19,15 @@
     "@mantine/hooks": "^6.0.14",
     "@mui/material": "^5.13.6",
     "apexcharts": "^3.41.0",
-    "chart.js": "^4.3.0",
     "faker": "^6.6.6",
-    "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.0",
-    "react-scroll": "^1.8.9",
-    "recharts": "^2.7.2",
-    "victory": "^36.6.11",
-    "victory-pie": "^36.6.11"
+    "recharts": "^2.7.2"
+ 
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
