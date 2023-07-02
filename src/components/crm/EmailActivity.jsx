@@ -12,8 +12,18 @@ export const data = {
       //   label: '# of Votes',
       data: [49, 22, 13, 5],
       backgroundColor: ["#1EB8E2", "#20E281", "#FFD933", "#EC1A52"],
+      border: false,
+
     },
   ],
+  options: {
+    plugins: {
+      legend: {
+        display: true,
+        position: "bottom",
+      }
+    }
+  }
 };
 
 
@@ -24,8 +34,8 @@ const EmailActivity = () => {
         <h3 className="text-sm font-bold">EMAIL ACTIVITY</h3>
         <BsThreeDotsVertical />
       </div>
-      <div className="px-6">
-      <Pie data={data}/>
+      <div className="px-5 lg:w-full w-96 mx-auto">
+      <Pie data={data} options={data.options}/>
       <div className="text-center text-sm mx-9 py-5">
         <p className="text-[#9ea9b4] mb-4">Activity in the last 30 days</p>
         <button className=" rounded-full w-full py-2 border-[1.5px] font-semibold border-[#00C5D9] text-[#00C5D9] hover:text-white hover:bg-[#00C5D9]">See more</button>

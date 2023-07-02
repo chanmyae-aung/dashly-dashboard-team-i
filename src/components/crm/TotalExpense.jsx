@@ -5,7 +5,7 @@ import ExpenseChart from './ExpenseChart'
 
 const TotalExpense = () => {
   return (
-    <div className="bg-white rounded-lg p-5 mt-5">
+    <div className="bg-white rounded-lg p-5 lg:mt-5">
     <div className="flex justify-between items-center">
       <h3 className="text-sm font-bold mb-5">TOTAL EXPENSE</h3>
       <BsThreeDotsVertical />

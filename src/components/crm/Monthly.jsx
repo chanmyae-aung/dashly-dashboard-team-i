@@ -43,6 +43,9 @@ export const options = {
         }
         
     },
+  //   responsive: true,
+  //   maintainAspectRatio: true,
+  //  aspectRatio: 2,
     plugins: {
       legend: {
         display: false,
@@ -114,7 +117,7 @@ const Monthly = () => {
                 ACTUAL REVENUE</button>
         </div>
       </div>
-      <div >
+      <div>
       <Line className="rounded-lg" options={options.options} data={data} />
       </div>
     </div>
