@@ -10,7 +10,7 @@ const TotalExpense = () => {
       <h3 className="text-sm font-bold mb-5">TOTAL EXPENSE</h3>
       <BsThreeDotsVertical />
     </div>
-    <div className='flex justify-between'>
+    <div className='flex justify-between pt-4'>
     <div>
         <h2 className="text-3xl font-bold">$102,194</h2>
         <div className="flex gap-2">

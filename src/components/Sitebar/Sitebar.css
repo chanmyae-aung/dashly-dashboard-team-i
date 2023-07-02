@@ -1,0 +1,22 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #797d82;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #686b70;
+    transition: 150ms;
+}
+
+
+.sub-menu {
+  @apply relative before:w-2 before:h-2 before:bg-[#9ea9b4] before:rounded-full before:absolute before:top-[5px] before:-left-7;
+}

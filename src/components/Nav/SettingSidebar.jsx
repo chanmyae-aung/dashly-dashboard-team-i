@@ -21,21 +21,21 @@ const SettingSidebar = () => {
     // const activeClass = e.target.classList;
     // activeClass.contains("active") ? activeClass.remove("active") : activeClass.add("active")
     navigation.forEach((i) => {
-      i.classList.remove("active");
-      e.target.classList.add("active");
+      i.classList.remove("selected");
+      e.target.classList.add("selected");
     });
 
   };
   const handleColorActive = (e) => {
     colorScheme.forEach((i) => {
-        i.classList.remove("active");
-        e.target.classList.add("active");
+        i.classList.remove("selected");
+        e.target.classList.add("selected");
       }); 
   }
   const handleBehaviourActive = (e) => {
     behaviour.forEach((i) => {
-        i.classList.remove("active");
-        e.target.classList.add("active");
+        i.classList.remove("selected");
+        e.target.classList.add("selected");
       }); 
   }
 
@@ -81,7 +81,7 @@ const SettingSidebar = () => {
         </p>
         <div className="flex mt-4 " onClick={handleNavigationActive}>
           <button
-            className={`navigation active flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]`}
+            className={`navigation selected flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]`}
           >
             Default
           </button>
@@ -98,7 +98,7 @@ const SettingSidebar = () => {
           Standard navigation sizing or minified icons with dropdowns.
         </p>
         <div onClick={handleBehaviourActive} className="flex mt-4">
-          <button className="behaviour active flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
+          <button className="behaviour selected flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
             Fixed
           </button>
           <button className="behaviour flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border-y border-[#00BAC7]">

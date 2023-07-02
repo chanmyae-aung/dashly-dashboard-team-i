@@ -10,7 +10,7 @@ const RecentOrder = () => {
         <BsThreeDotsVertical />
       </div>
       <div className="overflow-x-scroll">
-      <table className=" w-[855.5px]">
+      <table className=" w-[855.5px] table">
         <thead className="h-8">
           <tr className="text-xs my-6 text-[#B3C3D6] bg-[#F4F5F6]">
             <th>No.</th>
