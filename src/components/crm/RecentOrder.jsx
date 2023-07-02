@@ -10,9 +10,9 @@ const RecentOrder = () => {
         <BsThreeDotsVertical />
       </div>
       <div className="overflow-x-scroll">
-      <table className="table w-[855.5px]">
-        <thead>
-          <tr className="text-xs text-[#B3C3D6] bg-[#F4F5F6]">
+      <table className=" w-[855.5px] table">
+        <thead className="h-8">
+          <tr className="text-xs my-6 text-[#B3C3D6] bg-[#F4F5F6]">
             <th>No.</th>
             <th>Customer ID</th>
             <th>Product name</th>
@@ -22,10 +22,10 @@ const RecentOrder = () => {
             <th>Customer</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {orders.map((i) => {
             return (
-              <tr key={i.id} className="text-sm ">
+              <tr key={i.id} className="text-sm">
                 <td>{i.id}</td>
                 <td>{i.customer_id}</td>
                 <td className="flex items-center gap-3">

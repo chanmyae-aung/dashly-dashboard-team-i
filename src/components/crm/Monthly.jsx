@@ -43,6 +43,9 @@ export const options = {
         }
         
     },
+  //   responsive: true,
+  //   maintainAspectRatio: true,
+  //  aspectRatio: 2,
     plugins: {
       legend: {
         display: false,
@@ -102,7 +105,7 @@ export const data = {
 
 const Monthly = () => {
   return (
-    <div className="bg-white rounded-lg p-5">
+    <div className="bg-white w-full rounded-lg p-5">
       <div className="flex justify-between items-center pb-3">
         <h3 className="text-sm font-bold">MONTHLY ACTIVITY</h3>
         <div className="text-xs font-bold flex gap-5 items-center text-[#9ea9b4]">
@@ -114,8 +117,8 @@ const Monthly = () => {
                 ACTUAL REVENUE</button>
         </div>
       </div>
-      <div >
-      <Line className="rounded-lg" options={options.options} data={data} />
+      <div>
+      <Line className="rounded-lg" options={options.options} data={data} height={125}/>
       </div>
     </div>
   );
