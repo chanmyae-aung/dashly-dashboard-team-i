@@ -40,7 +40,7 @@ const SettingSidebar = () => {
   }
 
   return (
-    <div className="px-8 shadow-lg">
+    <div className="px-8 shadow-2xl">
       <CgClose
         onClick={toggleSetting}
         className="cursor-pointer text-xl ml-auto my-4"
