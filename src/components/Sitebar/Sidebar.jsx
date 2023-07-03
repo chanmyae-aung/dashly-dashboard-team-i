@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 import { FaAngleDown } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 import { BsCalendar4 } from "react-icons/bs";
@@ -69,7 +70,9 @@ const Sidebar = () => {
             <FaAngleDown className={`${showPage && '-rotate-180'} text-xl duration-300`} />
           </NavLink>
           <ul onClick={(e)=>e.stopPropagation()} className={`${showPage ? 'min-h-max opacity-100' : 'h-0 opacity-0 hidden'} duration-10 ms-16 text-xs font-bold cursor-pointer`}>
-            <li className="sub-site-link my-3 hover:text-white sub-menu">Account</li>
+            <li className="sub-site-link my-3 hover:text-white sub-menu">
+              <Link to={'/account'}> Account</Link>
+              </li>
             <li className="sub-site-link mb-3 hover:text-white sub-menu">User</li>
             <li className="sub-site-link mb-3 hover:text-white sub-menu">Pricing</li>
             <li className="sub-site-link mb-3 hover:text-white sub-menu">Wizard</li>

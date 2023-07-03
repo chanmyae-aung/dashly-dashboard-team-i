@@ -54,14 +54,14 @@ const Account = () => {
         <div className="md:sticky top-0 bg-[#FFFFFF] h-[700px] rounded-xl shadow-md lg:col-span-3 col-span-12 md:col-span-4 w-full mt-3">
           <div className="flex flex-col items-center pt-8 mx-auto ">
             <div className="relative cursor-pointer mb-3">
-              <div className="w-[80px] h-[80px] rounded-full overflow-hidden">
+              <div className="w-[110px] h-[110px] rounded-full overflow-hidden">
                 <img
                   className=""
                   src="https://d33wubrfki0l68.cloudfront.net/053f2dfd0df2f52c41e903a21d177b0b44abc9b1/1282c/assets/images/profiles/profile-06.jpeg"
                   alt=""
                 />
               </div>
-              <span className="w-8 h-8 absolute right-0 bottom-0 border border-white text-center flex justify-center items-center text-white rounded-full bg-green-500">
+              <span className="w-8 h-8 absolute right-0 bottom-0 border border-white text-center flex justify-center items-center text-white rounded-full bg-[#00BAC7]">
                 <PiPencilDuotone />
               </span>
             </div>
