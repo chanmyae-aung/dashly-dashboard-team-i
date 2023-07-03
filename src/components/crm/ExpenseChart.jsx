@@ -56,7 +56,7 @@ const data = {
   ],
   options: {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,

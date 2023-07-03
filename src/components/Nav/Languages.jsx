@@ -7,16 +7,19 @@ const Languages = () => {
 
   return (
     <ul
-      className={`shadow-lg z-50 flex flex-col mt-3 justify-center py-2 w-40 rounded-lg bg-white`}
+      className={`shadow-lg flex flex-col mt-3 justify-center py-2 w-40 rounded-lg bg-white`}
     >
       {language.map((i) => {
-        const currentImg = i.image
+        const currentImg = i.image;
+        // const imgUrl = currentImg.split('').splice(4,37).join('')
+
         return (
           <li
             onClick={() => {
               localStorage.removeItem("currentLanguage")
               localStorage.setItem("currentLanguage", currentImg);
               setImage(localStorage.getItem("currentLanguage"));
+              console.log(imgUrl)
             }}
             key={i.id}
             className="nav-dropdown"

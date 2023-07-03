@@ -27,7 +27,7 @@ export const data = {
 
 const EmailActivity = () => {
   return (
-    <div className="bg-white rounded-lg shadow-lg">
+    <div className="bg-white rounded-lg">
       <div className="flex justify-between items-center p-5">
         <h3 className="text-sm font-bold">EMAIL ACTIVITY</h3>
         <BsThreeDotsVertical />

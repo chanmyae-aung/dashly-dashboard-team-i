@@ -33,6 +33,7 @@ export const StateContextProvider = ({ children }) => {
   }
   const toggleProfile = () => {
     setShowProfile(!showProfile)
+    setShowStatus(false)
   }
   const toggleStatus = () => {
     setShowStatus(!showStatus)
