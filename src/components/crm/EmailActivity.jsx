@@ -32,7 +32,7 @@ const EmailActivity = () => {
         <h3 className="text-sm font-bold">EMAIL ACTIVITY</h3>
         <BsThreeDotsVertical />
       </div>
-      <div className="px-5 lg:w-80 mx-auto ">
+      <div className="px-5 w-80 mx-auto">
         <div className="px-5">
           <Pie data={data} options={data.options} />
         </div>

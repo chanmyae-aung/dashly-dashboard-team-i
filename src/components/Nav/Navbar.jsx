@@ -11,6 +11,7 @@ import ShowApps from "./ShowApps";
 import NotiSidebar from "./NotiSidebar";
 import SettingSidebar from "./SettingSidebar";
 import Profile from "./Profile";
+import Customize from "./Customize";
 
 const Navbar = () => {
   const {
@@ -29,12 +30,12 @@ const Navbar = () => {
     showProfile,
     toggleProfile,
   } = stateContextCustom();
-  
+
   const closeSideBars = () => {
-    showNoti &&toggleNoti();
-    showSetting && toggleSetting()
-    showProfile && toggleProfile()
-  }
+    showNoti && toggleNoti();
+    showSetting && toggleSetting();
+    showProfile && toggleProfile();
+  };
 
   return (
     <>
@@ -53,7 +54,7 @@ const Navbar = () => {
           {/* Select Theme */}
           <div className="relative mx-5">
             <button onClick={toggleShow} className="nav-btn">
-              <PiSunBold className=""/>
+              <PiSunBold className="" />
             </button>
             <div
               onClick={() => setShow(false)}
@@ -76,14 +77,14 @@ const Navbar = () => {
             </div>
           </div>
           {/* closed sidebar  */}
-            <div
-              onClick={closeSideBars}
-              className={
-                showNoti || showSetting || showProfile
-                  ? "w-full h-screen ml-[110px] fixed top-0 right-0 bg-transparent"
-                  : null
-              }
-            ></div>
+          <div
+            onClick={closeSideBars}
+            className={
+              showNoti || showSetting || showProfile
+                ? "w-full h-screen ml-[110px] fixed top-0 right-0 bg-transparent"
+                : null
+            }
+          ></div>
           <div className="flex gap-5 border-x px-5">
             {/* Notification */}
             <div className="relative">
@@ -115,7 +116,7 @@ const Navbar = () => {
             {/* Settings */}
             <div className="relative ">
               <button onClick={toggleSetting} className="nav-btn">
-                <MdOutlineSettings className=" animate-spin"/>
+                <MdOutlineSettings className=" animate-spin" />
               </button>
             </div>
             <div
@@ -147,6 +148,9 @@ const Navbar = () => {
               <Profile />
             </div>
           </div>
+        </div>
+        <div onClick={toggleSetting} className="fixed right-10 bottom-10 z-10 ">
+          <Customize />
         </div>
       </main>
     </>

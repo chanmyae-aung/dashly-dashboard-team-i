@@ -10,6 +10,7 @@ import Default from "../components/Default/Default";
 const Path = () => {
   return (
     <div>
+
       <Routes>
         <Route path="/" element={<Dashboard />}>
           <Route index element={<Ecommerce />} />

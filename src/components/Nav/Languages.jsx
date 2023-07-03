@@ -3,16 +3,21 @@ import { language } from "../../constants/nav";
 import { stateContextCustom } from "../../context/StateContext";
 
 const Languages = () => {
-const {setImage} = stateContextCustom()
+  const { setImage } = stateContextCustom();
+
   return (
     <ul
-      className={`shadow-lg flex flex-col mt-3 justify-center py-2 w-40 rounded-lg bg-white`}
+      className={`shadow-lg z-50 flex flex-col mt-3 justify-center py-2 w-40 rounded-lg bg-white`}
     >
       {language.map((i) => {
-        let currentImg = i.image;
+        const currentImg = i.image
         return (
           <li
-            onClick={() => setImage(currentImg)}
+            onClick={() => {
+              localStorage.removeItem("currentLanguage")
+              localStorage.setItem("currentLanguage", currentImg);
+              setImage(localStorage.getItem("currentLanguage"));
+            }}
             key={i.id}
             className="nav-dropdown"
           >

@@ -18,19 +18,19 @@ const CRM = () => {
           CRM
         </h1>
         <div className="px-10">
-          <div className="lg:flex gap-8 justify-between mb-8">
+          <div className="lg:flex gap-8 justify-between lg:mb-8">
             <div className="lg:w-[65%]">
               <RecentOrder />
             </div>
-            <div className="lg:w-[35%]">
+            <div className="lg:w-[35%] my-5 lg:my-0">
               <EmailActivity />
             </div>
           </div>
-          <div className="lg:flex gap-8 w-full justify-between mb-5">
-            <div className="bg-white lg:w-[67%] h-fit w-full rounded-lg">
+          <div className="lg:flex gap-8 w-full justify-between mb-5 lg:mb-8">
+            <div className="bg-white  lg:w-[67%] h-fit w-full rounded-lg">
               <Monthly />
             </div>
-            <div className="flex lg:w-[33%] lg:flex-col gap-3 mb-4">
+            <div className="flex lg:w-[33%] lg:flex-col gap-5 lg:gap-3 my-5 lg:my-0">
               <div className="w-full">
                 <TotalSale />
               </div>

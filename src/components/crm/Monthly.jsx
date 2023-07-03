@@ -43,8 +43,8 @@ export const options = {
         }
         
     },
-  //   responsive: true,
-  //   maintainAspectRatio: true,
+    responsive: true,
+    maintainAspectRatio: true,
   //  aspectRatio: 2,
     plugins: {
       legend: {
