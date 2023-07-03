@@ -63,7 +63,7 @@ const SettingSidebar = () => {
           Overall light or dark presentation.
         </p>
         <div className="flex mt-4" onClick={handleColorActive}>
-          <button  className=" colorScheme flex items-center px-3 py-2 gap-3 cursor-pointer select-none active justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
+          <button  className=" colorScheme selected flex items-center px-3 py-2 gap-3 cursor-pointer select-none active justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
             <PiSun className="text-lg" /> Light
           </button>
           <button  className=" colorScheme flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border-y border-[#00BAC7]">
@@ -133,7 +133,7 @@ const SettingSidebar = () => {
         </div>
         <Switch />
       </div>
-      <div className="flex gap-3 my-4 ">
+      <div className="flex gap-3 py-4 ">
         <button className="flex footer-active items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-sm font-semibold  border rounded-full">
           <PiArrowCounterClockwise /> Reset
         </button>

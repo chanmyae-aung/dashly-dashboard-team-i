@@ -82,6 +82,8 @@ const data = {
     },
   ],
   options: {
+    responsive: true,
+    maintainAspectRatio: true,
     plugins: {
       legend: {
         display: false,
