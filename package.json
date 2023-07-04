@@ -16,6 +16,7 @@
     "@mantine/core": "^6.0.14",
     "@mantine/form": "^6.0.14",
     "@mantine/hooks": "^6.0.14",
+    "@mui/joy": "^5.0.0-alpha.85",
     "@mui/material": "^5.13.6",
     "apexcharts": "^3.41.0",
     "chart.js": "^4.3.0",
