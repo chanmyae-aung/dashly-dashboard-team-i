@@ -44,7 +44,7 @@ export const options = {
         
     },
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
   //  aspectRatio: 2,
     plugins: {
       legend: {
@@ -118,7 +118,7 @@ const Monthly = () => {
         </div>
       </div>
       <div>
-      <Line className="rounded-lg" options={options.options} data={data} height={125}/>
+      <Line className="rounded-lg" options={options.options} data={data} height={250}/>
       </div>
     </div>
   );

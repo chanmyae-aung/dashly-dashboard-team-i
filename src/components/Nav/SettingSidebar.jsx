@@ -12,6 +12,7 @@ import { stateContextCustom } from "../../context/StateContext";
 
 const SettingSidebar = () => {
   const { toggleSetting } = stateContextCustom();
+  const [select, setSelect] = useState(false)
 
   const navigation = document.querySelectorAll(".navigation");
   const colorScheme = document.querySelectorAll(".colorScheme");
@@ -20,6 +21,7 @@ const SettingSidebar = () => {
   const handleNavigationActive = (e) => {
     // const activeClass = e.target.classList;
     // activeClass.contains("active") ? activeClass.remove("active") : activeClass.add("active")
+    setSelect(!select)
     navigation.forEach((i) => {
       i.classList.remove("selected");
       e.target.classList.add("selected");
@@ -27,12 +29,14 @@ const SettingSidebar = () => {
 
   };
   const handleColorActive = (e) => {
+    setSelect(!select)
     colorScheme.forEach((i) => {
         i.classList.remove("selected");
         e.target.classList.add("selected");
       }); 
   }
   const handleBehaviourActive = (e) => {
+    setSelect(!select)
     behaviour.forEach((i) => {
         i.classList.remove("selected");
         e.target.classList.add("selected");
