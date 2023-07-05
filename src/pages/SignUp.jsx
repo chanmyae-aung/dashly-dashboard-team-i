@@ -6,17 +6,22 @@ import {
   StyledEngineProvider,
 } from "@mui/joy";
 import React from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
+import "animate.css";
+import { stateContextCustom } from "../context/StateContext";
+import { LiaEye, LiaEyeSlash } from "react-icons/lia";
 
 export default function SignUp() {
   const inputStyle = {
     "--Input-focusedThickness": "0.08rem",
     "--Input-focusedHighlight": "#00bac7",
   };
+  const { showPass, toggleShowPass, showPassConfirm, toggleShowPassConfirm } =
+    stateContextCustom();
   return (
     <StyledEngineProvider injectFirst>
-      <div className="w-full flex bg-[#F1F5F7] h-screen">
-        <div className="md:basis-1/2 mx-auto px-5 lg:px-[58px]">
+      <div className="w-full flex bg-[#F1F5F7] h-screen fixed">
+        <div className="md:basis-1/2 mx-auto px-5 lg:px-[58px] animate__animated animate__fadeInLeft">
           <img
             className="mb-20 sm:mb-5 lg:mb-20 py-7"
             src="https://d33wubrfki0l68.cloudfront.net/ba6b91b7d508187d153e48318c22d0773a9cedfc/36afa/assets/images/logo.svg"
@@ -60,23 +65,39 @@ export default function SignUp() {
                   <FormLabel className="text-xs font-bold">
                     Your Password
                   </FormLabel>
-                  <Input
-                    sx={inputStyle}
-                    type="password"
-                    className="text-xs bg-[#F8FAFB]"
-                    placeholder="Your password"
-                  />
+                  <div className="relative">
+                    <Input
+                      sx={inputStyle}
+                      type={showPass ? "text" : "password"}
+                      className="text-xs bg-[#F8FAFB] relative"
+                      placeholder="Your password"
+                    />
+                    <div
+                      onClick={toggleShowPass}
+                      className="absolute right-5 bottom-3"
+                    >
+                      {!showPass ? <LiaEye /> : <LiaEyeSlash />}
+                    </div>
+                  </div>
                 </div>
                 <div className="w-full">
                   <FormLabel className="text-xs font-bold">
                     Confirm Password
                   </FormLabel>
-                  <Input
-                    sx={inputStyle}
-                    type="password"
-                    className="text-xs bg-[#F8FAFB]"
-                    placeholder="Your password again"
-                  />
+                  <div className="relative">
+                    <Input
+                      sx={inputStyle}
+                      type={showPassConfirm ? "text" : "password"}
+                      className="text-xs bg-[#F8FAFB] relative"
+                      placeholder="Your password again"
+                    />
+                    <div
+                      onClick={toggleShowPassConfirm}
+                      className="absolute right-5 bottom-3"
+                    >
+                      {!showPassConfirm ? <LiaEye /> : <LiaEyeSlash />}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,20 +117,25 @@ export default function SignUp() {
                 </span>
               </label>
             </div>
-            <button className="px-7 mt-8 py-2.5 bg-[#00bac7] rounded-full text-sm text-white font-semibold w-fit">
-              Get Started
-            </button>
+            <Link to={"/crm"}>
+              <button className="px-7 mt-8 py-2.5 bg-[#00bac7] rounded-full text-sm text-white font-semibold w-fit">
+                Get Started
+              </button>
+            </Link>
           </form>
           <div className="flex items-center gap-2 lg:absolute bottom-0 lg:py-10 py-9">
             <p className="text-sm text-slate-400">Already Register?</p>
-            <Link to="/login" className="text-[#00bac7] text-sm font-bold cursor-pointer">
+            <Link
+              to="/login"
+              className="text-[#00bac7] text-sm font-bold cursor-pointer"
+            >
               Login
             </Link>
           </div>
         </div>
         <div className="basis-1/2 hidden lg:block h-screen brightness-50">
           <img
-            className="w-full h-screen object-cover"
+            className="w-full h-screen object-cover animate__animated animate__fadeInRight"
             src="https://dashly-theme.com/assets/images/covers/sign-up-cover.jpeg"
             alt=""
           />
