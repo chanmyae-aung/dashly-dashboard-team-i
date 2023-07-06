@@ -28,6 +28,7 @@ const BarChart = () => {
         backgroundColor: "#f6f7f8",
         hoverBackgroundColor:"#00C5D9",
         borderRadius:5,
+        label:"%",
         data: [17, 20, 24, 34, 12, 10, 8],
       },
     ],

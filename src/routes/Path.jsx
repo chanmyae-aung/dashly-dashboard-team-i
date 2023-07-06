@@ -6,6 +6,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Ecommerce from "../pages/Ecommerce";
 import Account from "../pages/Account";
 import Default from "../components/Default/Default";
+import Test from "../components/Default/Test";
 
 const Path = () => {
   return (
@@ -16,6 +17,7 @@ const Path = () => {
           <Route path="/crm" element={<CRM />} />
           <Route path="/account" element={<Account />} />
           <Route path="/default" element={<Default/>}/>
+          <Route path="/test" element={<Test/>}/>
         </Route>
       </Routes>
     </div>
