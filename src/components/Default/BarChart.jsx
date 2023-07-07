@@ -35,6 +35,8 @@ const BarChart = () => {
   };
 
   const options = {
+    maintainAspectRatio: false,
+
     plugins: {
       legend: false,
       tooltip: {
@@ -68,7 +70,7 @@ const BarChart = () => {
 
   return (
     <div>
-      <Bar data={data} options={options} width={200} height={80}></Bar>
+      <Bar data={data} options={options} height={72}></Bar>
     </div>
   );
 };

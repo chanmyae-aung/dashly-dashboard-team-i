@@ -40,9 +40,9 @@ const AreaChart = () => {
           400, 1000, 1000, 2500, 3000, 1500, 4000, 5000, 8000, 6000, 5500, 6500,
         ],
         backgroundColor: "#00C5D9",
-        pointStyle:'circle',
-        pointColor:'#00C5D9',
-        pointRadius:2,
+        pointStyle: "circle",
+        pointColor: "#00C5D9",
+        pointRadius: 2,
         borderColor: "#00C5D9",
         pointBorderColor: "transparent",
         tension: 0.4,
@@ -51,11 +51,13 @@ const AreaChart = () => {
   };
 
   const options = {
+    maintainAspectRatio: false,
+
     plugins: {
       legend: false,
       tooltip: {
         displayColors: true,
-        usePointStyle:true,
+        usePointStyle: true,
       },
     },
     scales: {
@@ -84,13 +86,17 @@ const AreaChart = () => {
 
   return (
     <div>
-      <Line height={80} width={200} data={data} options={options} style={{ marginLeft: "auto" }}></Line>
+      <Line
+        height={72}
+        data={data}
+        options={options}
+        style={{ marginLeft: "auto" }}
+      ></Line>
     </div>
   );
 };
 
 export default AreaChart;
-
 
 // import React from "react";
 // import {
@@ -289,4 +295,3 @@ export default AreaChart;
 // };
 
 // export default AreaChart;
-

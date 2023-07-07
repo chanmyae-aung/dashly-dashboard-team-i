@@ -29,7 +29,7 @@ const StackedBar = () => {
     ],
     datasets: [
       {
-        barThickness: 12,
+        barThickness: 11,
         backgroundColor: "#00C5D9",
         hoverBackgroundColor: "#0faab9",
         label: "$",
@@ -39,7 +39,7 @@ const StackedBar = () => {
         ],
       },
       {
-        barThickness: 12,
+        barThickness: 11,
         backgroundColor: "#f6f7f8",
         hoverBackgroundColor: "#eaecee",
         borderRadius: 5,
@@ -104,20 +104,20 @@ const StackedBar = () => {
   };
 
   return (
-    <div>
+    <div className="w-[60%]">
       <div className="bg-white flex flex-col gap-10 p-5 rounded-xl shadow-lg">
         <div className="flex justify-between items-center">
           <div className="">
-            <h5 className="uppercase text-sm font-bold">Sales</h5>
+            <h5 className="uppercase text-xs font-bold">Sales</h5>
           </div>
           <div className="flex items-center gap-5">
             <div className="flex items-center gap-3">
               <div className="bg-[#00C5D9] h-[10px] w-[10px] rounded-full"></div>
-              <h5 className="uppercase text-xs text-gray-400">Projections</h5>
+              <h5 className="uppercase text-[10px] text-gray-400">Projections</h5>
             </div>
             <div className="flex items-center gap-3">
               <div className="bg-gray-200 h-[10px] w-[10px] rounded-full"></div>
-              <h5 className="uppercase text-xs text-gray-400">Actual</h5>
+              <h5 className="uppercase text-[10px] text-gray-400">Actual</h5>
             </div>
           </div>
         </div>
