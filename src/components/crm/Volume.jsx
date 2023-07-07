@@ -83,6 +83,9 @@ const data = {
     },
   ],
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    // aspectRatio: 2,
     plugins: {
       legend: {
         display: false,
@@ -162,7 +165,7 @@ const Volume = () => {
         <p className="text-xs text-gray-400">vs last year</p>
       </div>
       <div>
-        <Bar options={data.options} data={data} height={70}/>
+        <Bar options={data.options} data={data} height={250}/>
       </div>
     </div>
   );

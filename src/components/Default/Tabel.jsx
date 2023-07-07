@@ -3,33 +3,33 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 const Tabel = () => {
   return (
-    <div className="flex flex-col rounded-xl bg-white shadow-lg w-full">
+    <div className="flex flex-col rounded-xl bg-white shadow-lg w-[40%]">
       <div className="flex justify-between items-center p-5">
-        <h3 className="text-sm font-bold">PROJECTS</h3>
-        <BsThreeDotsVertical className="text-xl text-[#a8b2bc]" />
+        <h3 className="text-xs font-bold">PROJECTS</h3>
+        <BsThreeDotsVertical className="text-lg text-[#a8b2bc]" />
       </div>
       <table class="">
         <thead className="bg-[#f4f5f6]">
           <tr>
-            <th class="py-2 px-4 border-b w-[5%] text-gray-400 text-xs text-start">
+            <th class="py-2 px-4 border-b  text-gray-400 text-[11px] text-start">
               #
             </th>
-            <th class="py-2 px-4 border-b w-[40%] text-gray-400 text-xs text-start">
+            <th class="py-2 px-4 border-b  text-gray-400 text-[11px] text-start">
               Name
             </th>
-            <th class="py-2 px-4 border-b w-[40%] text-gray-400 text-xs text-start">
+            <th class="py-2 px-4 border-b  text-gray-400 text-[11px] text-start">
               Project manger
             </th>
-            <th class="py-2 px-4 border-b w=[20%] text-gray-400 text-xs text-end">
+            <th class="py-2 px-4 border-b  text-gray-400 text-[11px] text-end">
               Status
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="py-5 px-4 border-b text-[#c2d4e5] font-thin">1</td>
-            <td class="py-5 px-4 border-b text-[#c2d4e5] ">
-              <div className="flex items-center gap-3">
+            <td class="py-5 px-4 border-b  font-thin text-xs">1</td>
+            <td class="py-5 px-4 border-b  text-xs">
+              <div className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="avatar-img h-[25px]"
@@ -44,22 +44,22 @@ const Tabel = () => {
                 <h1>Alibaba</h1>
               </div>
             </td>
-            <td class="py-5 px-4 border-b text-gray-400 text-sm font-thin">
+            <td class="py-5 px-4 border-b text-gray-400 text-xs font-thin">
               Jon Richardson
             </td>
             <td class="py-5 px-4 border-b">
-              <div className="flex items-center justify-center rounded-lg bg-green-500">
-                <p className="text-xs text-white">Completed</p>
+              <div className="flex items-center justify-center rounded-md bg-green-500">
+                <p className="text-[10px] text-white">Completed</p>
               </div>
             </td>
           </tr>
           <tr>
-            <td class="py-5 px-4 border-b text-[#c2d4e5] font-thin">2</td>
-            <td class="py-5 px-4 border-b text-[#c2d4e5] ">
-              <div className="flex items-center gap-3">
+            <td class="py-5 px-4 border-b font-thin text-xs">2</td>
+            <td class="py-5 px-4 border-b text-xs">
+              <div className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="avatar-img h-[20px]"
+                  class="avatar-img h-[15px]"
                   viewBox="0 0 240 180.037"
                 >
                   <path d="M238.553 22.362s-6.882-5.327-29.168-13.512C189.83 1.653 174.893 0 174.893 0l.074 42.679c0 18.039-20.385 37.194-55.199 37.194h-.996c-34.81 0-55.188-19.155-55.188-37.194L63.652 0S48.729 1.652 29.166 8.85C6.881 17.035 0 22.362 0 22.362c1.652 34.229 54.826 62.43 119.263 62.445h.015c64.441-.015 117.628-28.216 119.275-62.445"></path>
@@ -68,19 +68,19 @@ const Tabel = () => {
                 <h1>Under Armour</h1>
               </div>
             </td>
-            <td class="py-5 px-4 border-b text-gray-400 text-sm font-thin">
+            <td class="py-5 px-4 border-b text-gray-400 text-xs font-thin">
               Alba Monday
             </td>
             <td class="py-5 px-4 border-b">
-              <div className="flex items-center justify-center rounded-lg bg-green-500">
-                <p className="text-xs text-white">Completed</p>
+              <div className="flex items-center justify-center rounded-md bg-green-500">
+                <p className="text-[10px] text-white">Completed</p>
               </div>
             </td>
           </tr>
           <tr>
-            <td class="py-5 px-4 border-b text-[#c2d4e5] font-thin">3</td>
-            <td class="py-5 px-4 border-b text-[#c2d4e5]">
-              <div className="flex items-center gap-3">
+            <td class="py-5 px-4 border-b font-thin text-xs">3</td>
+            <td class="py-5 px-4 border-b text-xs">
+              <div className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="avatar-img h-[15px]"
@@ -112,20 +112,20 @@ const Tabel = () => {
                 <h1>Burgo</h1>
               </div>
             </td>
-            <td class="py-5 px-4 border-b text-gray-400 text-sm font-thin">
+            <td class="py-5 px-4 border-b text-gray-400 text-xs font-thin">
               {" "}
               Rose Watson
             </td>
             <td class="py-5 px-4 border-b">
-              <div className="flex items-center justify-center rounded-lg bg-yellow-500">
-                <p className="text-xs text-white">in-progress</p>
+              <div className="flex items-center justify-center rounded-md bg-yellow-500">
+                <p className="text-[10px] text-white">in-progress</p>
               </div>
             </td>
           </tr>
           <tr>
-            <td class="py-5 px-4 border-b text-[#c2d4e5] font-thin">4</td>
-            <td class="py-5 px-4 border-b text-[#c2d4e5]">
-              <div className="flex items-center gap-3">
+            <td class="py-5 px-4 border-b font-thin text-xs">4</td>
+            <td class="py-5 px-4 border-b text-xs">
+              <div className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="avatar-img h-[25px]"
@@ -143,19 +143,19 @@ const Tabel = () => {
                 <h1>Richmond</h1>
               </div>
             </td>
-            <td class="py-5 px-4 border-b text-gray-400 text-sm font-thin">
+            <td class="py-5 px-4 border-b text-gray-400 text-xs font-thin">
               Levente Kosa
             </td>
             <td class="py-5 px-4 border-b">
-              <div className="flex items-center justify-center rounded-lg bg-yellow-500">
-                <p className="text-xs text-white">in-progress</p>
+              <div className="flex items-center justify-center rounded-md bg-yellow-500">
+                <p className="text-[10px] text-white">in-progress</p>
               </div>
             </td>
           </tr>
           <tr>
-            <td class="py-5 px-4 border-b text-[#c2d4e5] font-thin">5</td>
-            <td class="py-5 px-4 border-b text-[#c2d4e5]">
-              <div className="flex items-center gap-3">
+            <td class="py-5 px-4 border-b font-thin text-xs">5</td>
+            <td class="py-5 px-4 border-b text-xs">
+              <div className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="avatar-img h-[10px]"
@@ -181,12 +181,12 @@ const Tabel = () => {
                 <h1>Ebay</h1>
               </div>
             </td>
-            <td class="py-5 px-4 border-b text-gray-400 text-sm font-thin">
+            <td class="py-5 px-4 border-b text-gray-400 text-xs font-thin">
               Andy Webb
             </td>
             <td class="py-5 px-4 border-b">
-              <div className="flex items-center justify-center rounded-lg bg-red-500">
-                <p className="text-xs text-white">out-dated</p>
+              <div className="flex items-center justify-center rounded-md bg-red-500">
+                <p className="text-[10px] text-white">out-dated</p>
               </div>
             </td>
           </tr>

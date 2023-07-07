@@ -55,6 +55,8 @@ const data = {
     },
   ],
   options: {
+    responsive: true,
+    maintainAspectRatio: true,
     plugins: {
       legend: {
         display: false,
@@ -80,7 +82,6 @@ const data = {
         enabled: true,
       },
     },
-    responsive: true,
     scales: {
       x: {
         display: false,

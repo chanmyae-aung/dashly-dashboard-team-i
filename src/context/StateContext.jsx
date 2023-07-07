@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const stateContext = createContext();
 
@@ -11,6 +12,15 @@ export const StateContextProvider = ({ children }) => {
   const [showSetting, setShowSetting] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
   const [showStatus, setShowStatus] = useState(false)
+  const [showPass, setShowPass] = useState(false)
+  const [showPassConfirm, setShowPassConfirm] = useState(false)
+  const [token, setToken] = useState(false)
+  const nav = useNavigate()
+
+  const submitHandler = () => {
+    setToken(!token)
+    if (token === true) nav("/crm")
+  }
 
   const toggleShow = () => {
     setShow(!show);
@@ -33,18 +43,22 @@ export const StateContextProvider = ({ children }) => {
   }
   const toggleProfile = () => {
     setShowProfile(!showProfile)
+    setShowStatus(false)
   }
   const toggleStatus = () => {
     setShowStatus(!showStatus)
+  }
+  const toggleShowPass = () => {
+    setShowPass(!showPass)
+  }
+  const toggleShowPassConfirm = () => {
+    setShowPassConfirm(!showPassConfirm)
   }
 
   const hide = () => {
     show === true && setShow(false);
     showLanguage === true && setShowLanguage(false);
     showApps === true && setShowApps(false);
-    // showProfile === true && setShowProfile(false);
-    // showNoti === true && setShowNoti(false);
-    // showSetting === true && setShowSetting(false);
   };
 
   const data = {
@@ -65,6 +79,12 @@ export const StateContextProvider = ({ children }) => {
     toggleProfile,
     showStatus,
     toggleStatus,
+    showPass,
+    toggleShowPass,
+    showPassConfirm,
+    toggleShowPassConfirm,
+    token,
+    submitHandler,
     hide,
   };
   return <stateContext.Provider value={data}>{children}</stateContext.Provider>;

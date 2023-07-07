@@ -12,6 +12,7 @@ import { stateContextCustom } from "../../context/StateContext";
 
 const SettingSidebar = () => {
   const { toggleSetting } = stateContextCustom();
+  const [select, setSelect] = useState(false)
 
   const navigation = document.querySelectorAll(".navigation");
   const colorScheme = document.querySelectorAll(".colorScheme");
@@ -20,27 +21,30 @@ const SettingSidebar = () => {
   const handleNavigationActive = (e) => {
     // const activeClass = e.target.classList;
     // activeClass.contains("active") ? activeClass.remove("active") : activeClass.add("active")
+    setSelect(!select)
     navigation.forEach((i) => {
-      i.classList.remove("active");
-      e.target.classList.add("active");
+      i.classList.remove("selected");
+      e.target.classList.add("selected");
     });
 
   };
   const handleColorActive = (e) => {
+    setSelect(!select)
     colorScheme.forEach((i) => {
-        i.classList.remove("active");
-        e.target.classList.add("active");
+        i.classList.remove("selected");
+        e.target.classList.add("selected");
       }); 
   }
   const handleBehaviourActive = (e) => {
+    setSelect(!select)
     behaviour.forEach((i) => {
-        i.classList.remove("active");
-        e.target.classList.add("active");
+        i.classList.remove("selected");
+        e.target.classList.add("selected");
       }); 
   }
 
   return (
-    <div className="px-8 shadow-lg">
+    <div className="px-8 shadow-2xl">
       <CgClose
         onClick={toggleSetting}
         className="cursor-pointer text-xl ml-auto my-4"
@@ -63,7 +67,7 @@ const SettingSidebar = () => {
           Overall light or dark presentation.
         </p>
         <div className="flex mt-4" onClick={handleColorActive}>
-          <button  className=" colorScheme flex items-center px-3 py-2 gap-3 cursor-pointer select-none active justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
+          <button  className=" colorScheme selected flex items-center px-3 py-2 gap-3 cursor-pointer select-none active justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
             <PiSun className="text-lg" /> Light
           </button>
           <button  className=" colorScheme flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border-y border-[#00BAC7]">
@@ -81,7 +85,7 @@ const SettingSidebar = () => {
         </p>
         <div className="flex mt-4 " onClick={handleNavigationActive}>
           <button
-            className={`navigation active flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]`}
+            className={`navigation selected flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]`}
           >
             Default
           </button>
@@ -98,7 +102,7 @@ const SettingSidebar = () => {
           Standard navigation sizing or minified icons with dropdowns.
         </p>
         <div onClick={handleBehaviourActive} className="flex mt-4">
-          <button className="behaviour active flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
+          <button className="behaviour selected flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold  border rounded-l-full border-[#00BAC7]">
             Fixed
           </button>
           <button className="behaviour flex items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-[109px] text-[#00BAC7] text-sm font-semibold border-y border-[#00BAC7]">
@@ -133,7 +137,7 @@ const SettingSidebar = () => {
         </div>
         <Switch />
       </div>
-      <div className="flex gap-3 my-4 ">
+      <div className="flex gap-3 py-4 ">
         <button className="flex footer-active items-center px-3 py-2 gap-3 cursor-pointer select-none justify-center w-full text-sm font-semibold  border rounded-full">
           <PiArrowCounterClockwise /> Reset
         </button>
