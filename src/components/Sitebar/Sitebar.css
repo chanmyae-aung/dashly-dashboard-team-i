@@ -20,3 +20,7 @@
 .sub-menu {
   @apply relative before:w-2 before:h-2 before:bg-[#9ea9b4] before:rounded-full before:absolute before:top-[5px] before:-left-7;
 }
+
+.active{
+    @apply bg-[#0c3549] text-white
+}

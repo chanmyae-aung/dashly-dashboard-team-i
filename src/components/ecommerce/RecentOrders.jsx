@@ -11,10 +11,10 @@ const RecentOrders = () => {
       <table className="w-full">
         <thead>
           <tr className="bg-[#f4f5f6]">
-            <th className="text-start text-xs text-[#9ea9b4] ps-6 py-2">
+            <th className="text-start text-xs text-[#9ea9b4] ps-6 py-[11.5px]">
               Name
             </th>
-            <th className="text-start text-xs text-[#9ea9b4] ps-3 py-2">
+            <th className="text-start text-xs text-[#9ea9b4] ps-3 py-[11.5px]">
               Price
             </th>
           </tr>
