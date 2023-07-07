@@ -1,6 +1,4 @@
 import {
-  FormControl,
-  FormHelperText,
   FormLabel,
   Input,
   StyledEngineProvider,
@@ -117,7 +115,7 @@ export default function SignUp() {
                 </span>
               </label>
             </div>
-            <Link to={"/crm"}>
+            <Link to={"/"}>
               <button className="px-7 mt-8 py-2.5 bg-[#00bac7] rounded-full text-sm text-white font-semibold w-fit">
                 Get Started
               </button>
@@ -126,7 +124,7 @@ export default function SignUp() {
           <div className="flex items-center gap-2 lg:absolute bottom-0 lg:py-10 py-9">
             <p className="text-sm text-slate-400">Already Register?</p>
             <Link
-              to="/login"
+              to="/sign-in"
               className="text-[#00bac7] text-sm font-bold cursor-pointer"
             >
               Login

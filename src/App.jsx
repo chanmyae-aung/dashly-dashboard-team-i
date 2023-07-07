@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Path from "./routes/Path";
 import { stateContextCustom } from "./context/StateContext";
-import Customize from "./components/Nav/Customize";
 import { FlapperSpinner } from "react-spinners-kit";
 
 const App = () => {

@@ -82,7 +82,6 @@ const data = {
         enabled: true,
       },
     },
-    responsive: true,
     scales: {
       x: {
         display: false,

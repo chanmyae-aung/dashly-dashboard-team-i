@@ -14,7 +14,7 @@ import {LiaEye, LiaEyeSlash} from 'react-icons/lia'
       "--Input-focusedThickness": "0.08rem",
       "--Input-focusedHighlight": "#00bac7",
     };
-    const {showPass, toggleShowPass, token, submitHandler} = stateContextCustom();
+    const {showPass, toggleShowPass} = stateContextCustom();
 
     return (
       <StyledEngineProvider injectFirst>
@@ -77,7 +77,7 @@ import {LiaEye, LiaEyeSlash} from 'react-icons/lia'
                 >Remember me
                 </label>
               </div>
-              <Link to="/crm">
+              <Link to="/">
               <button className="px-7 mt-8 py-2.5 bg-[#00bac7] rounded-full text-sm text-white font-semibold w-fit">
                 Sign In
               </button>
@@ -85,7 +85,7 @@ import {LiaEye, LiaEyeSlash} from 'react-icons/lia'
             </form>
             <div className="flex items-center gap-2 lg:absolute bottom-0 lg:py-10 py-9">
               <p className="text-sm text-slate-400">Don't have an account yet?</p>
-              <Link to="/login" className="text-[#00bac7] text-sm font-bold cursor-pointer">
+              <Link to="/sign-up" className="text-[#00bac7] text-sm font-bold cursor-pointer">
                 Sign Up
               </Link>
             </div>

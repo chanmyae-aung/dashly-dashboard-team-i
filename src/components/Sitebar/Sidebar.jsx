@@ -5,15 +5,14 @@ import { FaAngleDown } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 import { BsCalendar4 } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
-import './Sitebar.css'
+import "./Sitebar.css";
 
 const Sidebar = () => {
-
-  const [showDash,setShowDash] = useState(false)
-  const [showPage,setShowPage] = useState(false)
-  const [showEmail,setShowEmail] = useState(false)
-  const [showTask,setShowTask] = useState(false)
-  const [showAuth,setShowAuth] = useState(false)
+  const [showDash, setShowDash] = useState(false);
+  const [showPage, setShowPage] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
+  const [showTask, setShowTask] = useState(false);
+  const [showAuth, setShowAuth] = useState(false);
 
   return (
     <div className="w-[260px] h-screen overflow-y-scroll bg-[#0e2238] text-[#9ea9b4] sticky top-0 left-0">
@@ -24,7 +23,7 @@ const Sidebar = () => {
         />
       </div>
       <ul className="transition-all">
-        <li onClick={()=>setShowDash(!showDash)}>
+        <li onClick={() => setShowDash(!showDash)}>
           <NavLink className="flex items-center justify-between hover:bg-[#0c3549] w-[85%] ps-8 py-4 pe-4 rounded-e-full">
             <div className="flex gap-3">
               <svg
@@ -53,35 +52,77 @@ const Sidebar = () => {
               </svg>
               <p className="text-sm font-semibold">Dashboards</p>
             </div>
-            <FaAngleDown className={`${showDash && '-rotate-180'} text-xl duration-300`} />
+            <FaAngleDown
+              className={`${showDash && "-rotate-180"} text-xl duration-300`}
+            />
           </NavLink>
-          <ul onClick={(e)=>e.stopPropagation()} className={`${showDash ? 'min-h-max opacity-100' : 'h-0 opacity-0 hidden'} duration-10 ms-16 text-xs font-bold cursor-pointer`}>
-            <li className="sub-site-link my-3 hover:text-white sub-menu">Default</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">E-commerce</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">CRM</li>
+          <ul
+            onClick={(e) => e.stopPropagation()}
+            className={`${
+              showDash ? "min-h-max opacity-100" : "h-0 opacity-0 hidden"
+            } duration-10 ms-16 text-xs font-bold cursor-pointer`}
+          >
+            <Link to={"/"}>
+              <li className="sub-site-link my-3 hover:text-white sub-menu">
+                Default
+              </li>
+            </Link>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              E-commerce
+            </li>
+            <Link to={"/crm"}>
+              <li className="sub-site-link mb-3 hover:text-white sub-menu">
+                CRM
+              </li>
+            </Link>
           </ul>
         </li>
-        <li onClick={()=>setShowPage(!showPage)}>
+        <li onClick={() => setShowPage(!showPage)}>
           <NavLink className="flex items-center justify-between hover:bg-[#0c3549] w-[85%] ps-8 py-4 pe-4 rounded-e-full">
             <div className="flex gap-3">
               <MdContentCopy className="transform -scale-y-100 text-lg" />
               <p className="text-sm font-semibold">Pages</p>
             </div>
-            <FaAngleDown className={`${showPage && '-rotate-180'} text-xl duration-300`} />
+            <FaAngleDown
+              className={`${showPage && "-rotate-180"} text-xl duration-300`}
+            />
           </NavLink>
-          <ul onClick={(e)=>e.stopPropagation()} className={`${showPage ? 'min-h-max opacity-100' : 'h-0 opacity-0 hidden'} duration-10 ms-16 text-xs font-bold cursor-pointer`}>
+          <ul
+            onClick={(e) => e.stopPropagation()}
+            className={`${
+              showPage ? "min-h-max opacity-100" : "h-0 opacity-0 hidden"
+            } duration-10 ms-16 text-xs font-bold cursor-pointer`}
+          >
             <li className="sub-site-link my-3 hover:text-white sub-menu">
-              <Link to={'/account'}> Account</Link>
-              </li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">User</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Pricing</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Wizard</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Help Center</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Invoice</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Api Keys</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Maintenance</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Connect Apps</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Landing Page</li>
+              <Link to={"/account"}> Account</Link>
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              User
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Pricing
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Wizard
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Help Center
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Invoice
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Api Keys
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Maintenance
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Connect Apps
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Landing Page
+            </li>
           </ul>
         </li>
         <li>
@@ -123,20 +164,31 @@ const Sidebar = () => {
             </div>
           </NavLink>
         </li>
-        <li onClick={()=>setShowEmail(!showEmail)}>
+        <li onClick={() => setShowEmail(!showEmail)}>
           <NavLink className="flex items-center justify-between hover:bg-[#0c3549] w-[85%] ps-8 py-4 pe-4 rounded-e-full">
             <div className="flex gap-3">
               <TfiEmail className="transform -scale-y-100 text-lg" />
               <p className="text-sm font-semibold">Email</p>
             </div>
-            <FaAngleDown className={`${showEmail && '-rotate-180'} text-xl duration-300`} />
+            <FaAngleDown
+              className={`${showEmail && "-rotate-180"} text-xl duration-300`}
+            />
           </NavLink>
-          <ul onClick={(e)=>e.stopPropagation()} className={`${showEmail ? 'min-h-max opacity-100' : 'h-0 opacity-0 hidden'} duration-10 ms-16 text-xs font-bold cursor-pointer`}>
-            <li className="sub-site-link my-3 hover:text-white sub-menu">Inbox</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Read Email</li>            
+          <ul
+            onClick={(e) => e.stopPropagation()}
+            className={`${
+              showEmail ? "min-h-max opacity-100" : "h-0 opacity-0 hidden"
+            } duration-10 ms-16 text-xs font-bold cursor-pointer`}
+          >
+            <li className="sub-site-link my-3 hover:text-white sub-menu">
+              Inbox
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Read Email
+            </li>
           </ul>
         </li>
-        <li onClick={()=>setShowTask(!showTask)}>
+        <li onClick={() => setShowTask(!showTask)}>
           <NavLink className="flex items-center justify-between hover:bg-[#0c3549] w-[85%] ps-8 py-4 pe-4 rounded-e-full">
             <div className="flex gap-3">
               <svg
@@ -204,11 +256,22 @@ const Sidebar = () => {
               </svg>
               <p className="text-sm font-semibold">Tasks</p>
             </div>
-            <FaAngleDown className={`${showTask && '-rotate-180'} text-xl duration-300`} />
+            <FaAngleDown
+              className={`${showTask && "-rotate-180"} text-xl duration-300`}
+            />
           </NavLink>
-          <ul onClick={(e)=>e.stopPropagation()} className={`${showTask ? 'min-h-max opacity-100' : 'h-0 opacity-0 hidden'} duration-10 ms-16 text-xs font-bold cursor-pointer`}>
-            <li className="sub-site-link my-3 hover:text-white sub-menu">Kanban Board</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Task Details</li>            
+          <ul
+            onClick={(e) => e.stopPropagation()}
+            className={`${
+              showTask ? "min-h-max opacity-100" : "h-0 opacity-0 hidden"
+            } duration-10 ms-16 text-xs font-bold cursor-pointer`}
+          >
+            <li className="sub-site-link my-3 hover:text-white sub-menu">
+              Kanban Board
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Task Details
+            </li>
           </ul>
         </li>
         <li>
@@ -234,7 +297,7 @@ const Sidebar = () => {
             </div>
           </NavLink>
         </li>
-        <li onClick={()=>setShowAuth(!showAuth)}>
+        <li onClick={() => setShowAuth(!showAuth)}>
           <NavLink className="flex items-center justify-between hover:bg-[#0c3549] w-[85%] ps-8 py-4 pe-4 rounded-e-full">
             <div className="flex gap-3">
               <svg
@@ -272,15 +335,38 @@ const Sidebar = () => {
               </svg>
               <p className="text-sm font-semibold">Authentication</p>
             </div>
-            <FaAngleDown className={`${showAuth && '-rotate-180'} text-xl duration-300`} />
+            <FaAngleDown
+              className={`${showAuth && "-rotate-180"} text-xl duration-300`}
+            />
           </NavLink>
-          <ul onClick={(e)=>e.stopPropagation()} className={`${showAuth ? 'min-h-max opacity-100' : 'h-0 opacity-0 hidden'} duration-10 ms-16 text-xs font-bold cursor-pointer`}>
-            <li className="sub-site-link my-3 hover:text-white sub-menu">Sign up</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Sign In</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Reset Password</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Email Verification</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">2-setp Verification</li>
-            <li className="sub-site-link mb-3 hover:text-white sub-menu">Error</li>            
+          <ul
+            onClick={(e) => e.stopPropagation()}
+            className={`${
+              showAuth ? "min-h-max opacity-100" : "h-0 opacity-0 hidden"
+            } duration-10 ms-16 text-xs font-bold cursor-pointer`}
+          >
+            <Link to={"/sign-up"}>
+              <li className="sub-site-link my-3 hover:text-white sub-menu">
+                Sign up
+              </li>
+            </Link>
+            <Link to={"/sign-in"}>
+              <li className="sub-site-link mb-3 hover:text-white sub-menu">
+                Sign In
+              </li>
+            </Link>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Reset Password
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Email Verification
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              2-setp Verification
+            </li>
+            <li className="sub-site-link mb-3 hover:text-white sub-menu">
+              Error
+            </li>
           </ul>
         </li>
         <li>
