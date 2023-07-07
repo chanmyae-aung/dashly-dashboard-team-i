@@ -82,6 +82,8 @@ const data = {
     },
   ],
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
@@ -107,7 +109,6 @@ const data = {
         enabled: true,
       },
     },
-    responsive: true,
     scales: {
       x: {
         display: false,
@@ -156,7 +157,7 @@ const Revenue = () => {
         <p className="text-xs text-gray-400">vs last year</p>
       </div>
       <div>
-      <Line options={data.options} data={data} height={70}/>
+      <Line options={data.options} data={data} height={250}/>
       </div>
     </div>
   );

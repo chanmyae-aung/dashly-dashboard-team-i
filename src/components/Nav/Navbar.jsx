@@ -11,6 +11,7 @@ import ShowApps from "./ShowApps";
 import NotiSidebar from "./NotiSidebar";
 import SettingSidebar from "./SettingSidebar";
 import Profile from "./Profile";
+import Customize from "./Customize";
 
 const Navbar = () => {
   const {
@@ -29,12 +30,12 @@ const Navbar = () => {
     showProfile,
     toggleProfile,
   } = stateContextCustom();
-  
+  console.log(image)
   const closeSideBars = () => {
-    showNoti &&toggleNoti();
-    showSetting && toggleSetting()
-    showProfile && toggleProfile()
-  }
+    showNoti && toggleNoti();
+    showSetting && toggleSetting();
+    showProfile && toggleProfile();
+  };
 
   return (
     <>
@@ -53,11 +54,11 @@ const Navbar = () => {
           {/* Select Theme */}
           <div className="relative mx-5">
             <button onClick={toggleShow} className="nav-btn">
-              <PiSunBold className=""/>
+              <PiSunBold className="" />
             </button>
             <div
               onClick={() => setShow(false)}
-              className={`${!show ? "hidden" : "block"} absolute right-0`}
+              className={`${!show ? "scale-y-0" : "scale-y-1"} transform transition origin-top duration-200 absolute right-0 z-10`}
             >
               <Theme />
             </div>
@@ -69,27 +70,27 @@ const Navbar = () => {
             </button>
             <div
               className={`${
-                !showLanguage ? "hidden" : "block"
-              } absolute right-0`}
+                !showLanguage ? "scale-y-0" : "scale-y-1"
+              } transform transition origin-top duration-200 absolute right-0 z-10`}
             >
               <Languages />
             </div>
           </div>
           {/* closed sidebar  */}
-            <div
-              onClick={closeSideBars}
-              className={
-                showNoti || showSetting || showProfile
-                  ? "w-full h-screen ml-[110px] fixed top-0 right-0 bg-transparent"
-                  : null
-              }
-            ></div>
+          <div
+            onClick={closeSideBars}
+            className={
+              showNoti || showSetting || showProfile 
+                ? "w-full h-screen ml-[110px] fixed top-0 right-0 bg-transparent z-10"
+                : null
+            }
+          ></div>
           <div className="flex gap-5 border-x px-5">
             {/* Notification */}
             <div className="relative">
               <button onClick={toggleNoti} className="nav-btn">
                 <PiBell />
-                <span className="text-xs bg-red-500 rounded-full text-white px-1.5 absolute -top-2 -right-3">
+                <span className="text-xs bg-red-500 rounded-full text-white px-1.5 absolute -top-2 -right-3 z-10">
                   20+
                 </span>
               </button>
@@ -97,7 +98,7 @@ const Navbar = () => {
             <div
               className={`${
                 !showNoti ? "translate-x-[400px]" : "translate-x-0"
-              } shadow-lg transition-all ease-in duration-200 w-[400px] fixed right-0 top-0  h-screen bg-white z-10 overflow-y-scroll `}
+              } shadow-lg transition-all ease-linear duration-200 w-[400px] fixed right-0 top-0  h-screen bg-white z-10 overflow-y-scroll `}
             >
               <NotiSidebar />
             </div>
@@ -107,7 +108,7 @@ const Navbar = () => {
                 <RiAppsLine />
               </button>
               <div
-                className={`${!showApps ? "hidden" : "block"} absolute right-0`}
+                className={`${!showApps ? "scale-y-0" : "scale-y-1"} transform transition origin-top duration-200 absolute right-0 z-10`}
               >
                 <ShowApps />
               </div>
@@ -115,13 +116,13 @@ const Navbar = () => {
             {/* Settings */}
             <div className="relative ">
               <button onClick={toggleSetting} className="nav-btn">
-                <MdOutlineSettings className=" animate-spin"/>
+                <MdOutlineSettings className=" animate-spin" />
               </button>
             </div>
             <div
               className={`${
                 !showSetting ? "translate-x-[400px]" : "translate-x-0"
-              } w-[400px] fixed right-0 top-0 transition-all ease-in duration-200 h-screen bg-white z-10 overflow-y-scroll `}
+              } w-[400px] fixed right-0 top-0 transition-all ease-linear duration-200 h-screen bg-white z-10 overflow-y-scroll `}
             >
               <SettingSidebar />
             </div>
@@ -141,12 +142,15 @@ const Navbar = () => {
             <span className="w-3 h-3 absolute right-0 bottom-0 border border-white rounded-full bg-green-500"></span>
             <div
               className={`${
-                !showProfile ? "hidden" : "block"
-              } absolute right-0`}
+                !showProfile ? "scale-y-0" : "scale-y-1"
+              } transform transition origin-top duration-200 z-10 absolute right-0`}
             >
               <Profile />
             </div>
           </div>
+        </div>
+        <div onClick={toggleSetting} className="fixed right-10 bottom-10 z-1 ">
+          <Customize />
         </div>
       </main>
     </>

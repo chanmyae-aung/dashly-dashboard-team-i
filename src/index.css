@@ -22,9 +22,12 @@ body{
 .nav-dropdown:hover {
     @apply bg-[#F6F7F8]
 }
-/* .active{
-    @apply text-white bg-[#00BAC7]
-} */
+.selected{
+    @apply text-white bg-[#00BAC7] !important
+}
+.navigation {
+    color: #00BAC7;
+}
 .footer-active{
     @apply text-white bg-black
 }
