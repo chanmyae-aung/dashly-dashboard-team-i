@@ -28,12 +28,15 @@ const BarChart = () => {
         backgroundColor: "#f6f7f8",
         hoverBackgroundColor:"#00C5D9",
         borderRadius:5,
+        label:"%",
         data: [17, 20, 24, 34, 12, 10, 8],
       },
     ],
   };
 
   const options = {
+    maintainAspectRatio: false,
+
     plugins: {
       legend: false,
       tooltip: {
@@ -67,7 +70,7 @@ const BarChart = () => {
 
   return (
     <div>
-      <Bar data={data} options={options} width={200} height={80}></Bar>
+      <Bar data={data} options={options} height={72}></Bar>
     </div>
   );
 };
